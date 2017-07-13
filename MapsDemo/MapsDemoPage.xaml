@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns:behaviors="clr-namespace:MapsDemo;assembly=MapsDemo;" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MapsDemo" x:Class="MapsDemo.MapsDemoPage">
+    <StackLayout>
+        <maps:Map  x:Name="map" Margin="5" IsShowingUser="true" MapType="Hybrid">
+            <maps:Map.Behaviors>
+                <behaviors:MapBehavior ItemsSource="{Binding Stores}" />
+            </maps:Map.Behaviors>
+        </maps:Map>
+        <Slider Maximum="18" Minimum="1"  ValueChanged="Handle_ValueChanged"></Slider>
+    </StackLayout>
+</ContentPage>
