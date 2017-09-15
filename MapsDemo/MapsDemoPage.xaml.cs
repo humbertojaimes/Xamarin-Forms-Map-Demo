@@ -31,8 +31,8 @@ namespace MapsDemo
 			var locator = CrossGeolocator.Current;
 			locator.DesiredAccuracy = 5000;
             locator.PositionChanged+= Locator_PositionChanged;
-            locator.StartListeningAsync(10000,5000,true);
-			var position = await locator.GetPositionAsync(10000);
+            locator.StartListeningAsync(TimeSpan.FromSeconds(3),100,true);
+			var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(3));
 			var pin = new Pin
 			{
 				Type = PinType.SearchResult,
